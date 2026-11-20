@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visor DWF</title>
+<style>
+/*__CSS__*/
+</style>
+</head>
+<body>
+<header class="bar">
+  <button id="btnOpen" class="btn primary" type="button" title="Abrir archivo (⌘O)">Abrir…</button>
+  <div class="doc">
+    <span id="fileName" class="file"></span>
+    <span id="sheetCount" class="muted"></span>
+  </div>
+  <div class="tools">
+    <div class="group" role="group" aria-label="Zoom">
+      <button id="btnZoomOut" class="btn icon" type="button" title="Alejar (−)" aria-label="Alejar">−</button>
+      <span id="zoomLabel" class="zoom" aria-live="off"></span>
+      <button id="btnZoomIn" class="btn icon" type="button" title="Acercar (+)" aria-label="Acercar">+</button>
+    </div>
+    <button id="btnFit" class="btn" type="button" title="Ajustar a la ventana (0)">Ajustar</button>
+    <button id="btnWeights" class="btn toggle" type="button" aria-pressed="true" title="Mostrar los grosores de línea del plano">Grosores</button>
+    <button id="btnDark" class="btn toggle" type="button" aria-pressed="false" title="Ver el plano sobre fondo oscuro">Fondo oscuro</button>
+    <button id="btnLayers" class="btn toggle" type="button" aria-pressed="false" title="Mostrar u ocultar capas">Capas</button>
+    <button id="btnExport" class="btn" type="button" title="Guardar la hoja actual como imagen PNG">Exportar PNG</button>
+  </div>
+</header>
+
+<main class="main">
+  <nav id="sidebar" class="side" aria-label="Hojas">
+    <div id="sheets" class="sheets"></div>
+  </nav>
+
+  <section id="stage" class="stage">
+    <canvas id="canvas"></canvas>
+
+    <div id="welcome" class="welcome">
+      <div class="drop">
+        <svg viewBox="0 0 64 64" width="56" height="56" aria-hidden="true"><path d="M14 6h24l12 12v40H14z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M38 6v12h12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M22 46l8-12 6 8 4-5 4 9z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
+        <h1>Visor DWF</h1>
+        <p>Arrastrá un archivo <strong>.dwf</strong> a esta ventana<br>o elegilo desde tu Mac.</p>
+        <button id="btnOpenBig" class="btn primary big" type="button">Elegir archivo…</button>
+        <p class="hint">El archivo se abre localmente en tu navegador. No se sube a ningún servidor.</p>
+      </div>
+    </div>
+
+    <div id="notice" class="notice" hidden>
+      <span id="noticeText"></span>
+      <button id="noticeClose" class="x" type="button" aria-label="Cerrar aviso">×</button>
+    </div>
+    <div id="error" class="error" role="alert" hidden>
+      <span id="errorText"></span>
+      <button id="errorClose" class="x" type="button" aria-label="Cerrar">×</button>
+    </div>
+    <div class="dropmask"><span>Soltá el archivo para abrirlo</span></div>
+    <div class="spinner" aria-hidden="true"></div>
+  </section>
+
+  <aside id="layerPanel" class="panel" aria-label="Capas">
+    <div class="panel-head">
+      <strong>Capas</strong>
+      <span>
+        <button id="layersAll" class="link" type="button">Todas</button>
+        <button id="layersNone" class="link" type="button">Ninguna</button>
+      </span>
+    </div>
+    <div id="layers" class="layers"></div>
+  </aside>
+</main>
+
+<footer class="status">
+  <span id="sheetTitle" class="title"></span>
+  <span id="sheetInfo" class="muted"></span>
+  <span class="spacer"></span>
+  <span id="coords" class="coords"></span>
+</footer>
+
+<input id="file" type="file" accept=".dwf,.w2d,.DWF,.W2D" hidden>
+
+<script>
+/*__CORE__*/
+</script>
+<script>
+/*__VIEWER__*/
+</script>
+</body>
+</html>
