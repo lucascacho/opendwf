@@ -1,14 +1,14 @@
 # opendwf — Visor DWF
 
-Visor de planos **.dwf** (Autodesk Design Web Format, 2D) para Mac, sin instalar nada:
-es un único archivo HTML que se abre en Safari, Chrome o Firefox.
-El archivo DWF se lee localmente en el navegador; no se sube a ningún servidor.
+Visor de planos **.dwf** (Autodesk Design Web Format, 2D) que funciona en cualquier sistema
+(macOS, Windows, Linux) sin instalar nada: es un único archivo HTML que se abre en Chrome, Safari,
+Firefox o Edge. El archivo DWF se lee localmente en el navegador; no se sube a ningún servidor.
 
 ## Cómo usarlo
 
 1. Descargá [`dist/VisorDWF.html`](dist/VisorDWF.html) (botón *Download raw file* en GitHub).
 2. Abrilo con doble clic.
-3. Arrastrá un `.dwf` a la ventana, o usá **Abrir…** (⌘O).
+3. Arrastrá un `.dwf` a la ventana, o usá **Abrir…** (Ctrl+O / ⌘O).
 
 | Acción | Cómo |
 | --- | --- |
@@ -72,5 +72,9 @@ Abre el visor en un navegador sin interfaz y guarda una captura (requiere Playwr
 El decodificador está escrito desde cero, tomando como referencia del formato el código fuente del
 DWF Toolkit publicado por Autodesk. Las tablas de `src/tables.json` (paleta de colores por defecto y
 diccionario de precarga de la compresión) son datos definidos por el formato y provienen de ese toolkit.
+
+## Licencia
+
+[MIT](LICENSE).
 
 DWF y AutoCAD son marcas de Autodesk, Inc. Este proyecto no está afiliado a Autodesk.
